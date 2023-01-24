@@ -11,3 +11,4 @@ export class PageComponent {
     parent.insertAdjacentElement(position, this.element)
   }
 }
+
