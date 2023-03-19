@@ -3,13 +3,17 @@ import { useQuery } from '@tanstack/react-query';
 
 export default function Proudcts() {
   const [checked, setChecked] = useState(false);
-  const { isLoading, error, data: products } = useQuery(['products', checked], async () => {
-    console.log('fetching...');
-    return fetch(`data/${checked ? 'sale_' : ''}products.json`).then((res) => {
-      console.log(res);
-      return res.json();
-    });
-  });
+  const { isLoading, error, data: products } = useQuery(
+    ['products', checked],
+    async () => {
+      console.log('fetching...');
+      return fetch(`data/${checked ? 'sale_' : ''}products.json`).then((res) => res.json());
+    },
+
+    {
+      staleTime: 5000,
+    },
+  );
   const handleChange = () => setChecked((prev) => !prev);
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
