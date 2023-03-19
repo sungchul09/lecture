@@ -1,12 +1,19 @@
 import './App.css';
 
 function App() {
+  const name = 'seongcheol';
+  const nameList = ['banana', 'apple', 'kiwi']
   return (
-    <>
-      <h1 className="">hello!</h1>
-      <h2>asdf</h2>
-    </>
-  );
+  <>
+    <p> { `Hello ${name}` } </p>
+    <h1 className="hello-name">hello</h1>
+    <ul>
+      {
+        nameList.map(item => <li>{item}</li>)
+      }
+    </ul>
+  </>
+  )
 }
 
 export default App;
