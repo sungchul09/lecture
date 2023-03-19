@@ -1,6 +1,6 @@
-import './App.css';
+import './css/AppJSX.css';
 
-function App() {
+function AppJSX() {
   const name = 'seongcheol';
   const nameList = ['banana', 'apple', 'kiwi']
   return (
@@ -14,6 +14,8 @@ function App() {
     </ul>
   </>
   )
+  
 }
 
-export default App;
+
+export default AppJSX;
