@@ -1,5 +1,5 @@
 import React from 'react';
-import Avatar from 'components/BasicComponents/Avatar';
+import Avatar from 'components/Basic/Avatar';
 
 export default function Profile({
   image, name, title, isNew,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import 'pages/BasicPages/css/AppProducts.css';
-import Products from 'components/BasicComponents/Proudcts';
+import 'pages/Basic/css/AppProducts.css';
+import Products from 'components/Basic/Proudcts';
 
 export default function AppProducts() {
   const [showProducts, setShowProducts] = useState(true);

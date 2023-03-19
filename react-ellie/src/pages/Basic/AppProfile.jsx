@@ -1,6 +1,6 @@
-import 'pages/BasicPages/css/AppProfile.css';
-import Profile from 'components/BasicComponents/Profile';
-import Avatar from 'components/BasicComponents/Avatar';
+import 'pages/Basic/css/AppProfile.css';
+import Profile from 'components/Basic/Profile';
+import Avatar from 'components/Basic/Avatar';
 
 function AppProfile() {
   const profileMap = [

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'index.css';
-import App from 'pages/BasicPages/AppJSX';
+import App from 'pages/Basic/AppJSX';
 import reportWebVitals from 'reportWebVitals';
-import AppProfile from 'pages/BasicPages/AppProfile';
-import AppCounter from 'pages/BasicPages/AppCounter';
-import AppProducts from 'pages/BasicPages/AppProducts';
-import AppRouter from 'pages/RouterPages/AppRouter';
+import AppProfile from 'pages/Basic/AppProfile';
+import AppCounter from 'pages/Basic/AppCounter';
+import AppProducts from 'pages/Basic/AppProducts';
+import AppRouter from 'pages/Router/AppRouter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
