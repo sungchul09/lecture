@@ -1,0 +1,26 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  padding: 1rem;
+  border: 2px solid rgb(215,127,12);
+  border-radius: 1rem;
+}
+
+.counter:hover {
+  background-color: rgb(246, 243, 197);
+}
+
+.number {
+  font-size: 7rem;
+}
+
+.button {
+  font-size: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgb(215,127,12);
+  color: white;
+  border-radius: 10px;
+}

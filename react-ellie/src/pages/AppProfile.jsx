@@ -25,21 +25,29 @@ function AppProfile() {
       useAvatar: true
     }
   ]
+
+  const handleClick = (event) => {
+    console.log(event)
+    alert('버튼이 클릭됨!')
+  }
   return (
   <>
+    <button onClick={handleClick}>버튼</button>
     {
       profileMap.map(v => 
           v.useAvatar ?
           <Avatar
+            key={v.name}
             image={v.image}
             isNew={v.isNew}
           /> :
           <Profile 
-          image={v.image}
-          name={v.name}
-          title={v.title}
-          isNew={v.isNew}
-          useAvatar={v.useAvatar}
+            key={v.name}
+            image={v.image}
+            name={v.name}
+            title={v.title}
+            isNew={v.isNew}
+            useAvatar={v.useAvatar}
         />
       )
     }
