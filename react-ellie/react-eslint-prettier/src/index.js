@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './pages/AppJSX';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AppProfile from './pages/AppProfile'
-import AppCounter from './pages/AppCounter'
-import AppProducts from './pages/AppProducts'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppProducts />
+    <App />
   </React.StrictMode>
 );
 
