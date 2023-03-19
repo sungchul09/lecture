@@ -1,13 +1,15 @@
 import React from 'react'
-
-export default function Profile({image, name, title}) {
+import Avatar from './Avatar'
+export default function Profile({image, name, title, isNew, useAvatar}) {
   return (
       <div className="profile">
-        <img 
-          className="photo"
-          src={image}
-          alt="avatar" 
-        />
+        {
+          useAvatar && 
+          <Avatar
+            image={image}
+            isNew={isNew}
+          />
+        }
         <h1>{name}</h1>
         <p>{title}</p>
       </div>

@@ -1,4 +1,5 @@
 .profile {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,4 +15,14 @@
   border-radius: 50%;
 }
 
+.new {
+  position: absolute;
+  left: 70%;
+  top: 10%;
+  background-color: aquamarine;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
 
