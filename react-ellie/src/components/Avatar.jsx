@@ -1,18 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default function Avatar({image}) {
+export default function Avatar({ image }) {
   return (
     <div className="avatar">
-      <img 
+      <img
         className="photo"
         src={image}
-        alt="avatar" 
+        alt="avatar"
       />
       <span className="new">New</span>
     </div>
-  )
+  );
 }
-
-
-
-

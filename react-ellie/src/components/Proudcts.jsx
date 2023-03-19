@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function Proudcts() {
-  const [count, setcount] = useState(0)
-  const [products, setProducts] = useState([])
+  const [count, setcount] = useState(0);
+  const [products, setProducts] = useState([]);
 
   return (
     <>
@@ -18,7 +18,7 @@ export default function Proudcts() {
           ))
         }
       </ul>
-      <button onClick={() => setcount((prev) => prev + 1)}>{count}</button> 
+      <button type="button" onClick={() => setcount((prev) => prev + 1)}>{count}</button>
     </>
-  )
+  );
 }

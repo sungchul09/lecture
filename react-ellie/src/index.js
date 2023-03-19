@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './pages/AppJSX';
 import reportWebVitals from './reportWebVitals';
-import AppProfile from './pages/AppProfile'
-import AppCounter from './pages/AppCounter'
-import AppProducts from './pages/AppProducts'
+import AppProfile from './pages/AppProfile';
+import AppCounter from './pages/AppCounter';
+import AppProducts from './pages/AppProducts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AppProducts />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
