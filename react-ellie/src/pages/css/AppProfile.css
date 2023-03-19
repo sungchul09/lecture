@@ -3,10 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgb(230, 230, 230);
+  width: 300px;
+  border-radius: 20px;
+  border: 2px solid black;
 }
 
 .photo {
-  width: 300px;
+  width: 200px;
   border-radius: 50%;
 }
 
