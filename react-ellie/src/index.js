@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './pages/AppJSX';
-import reportWebVitals from './reportWebVitals';
-import AppProfile from './pages/AppProfile';
-import AppCounter from './pages/AppCounter';
-import AppProducts from './pages/AppProducts';
+import 'index.css';
+import App from 'pages/BasicPages/AppJSX';
+import reportWebVitals from 'reportWebVitals';
+import AppProfile from 'pages/BasicPages/AppProfile';
+import AppCounter from 'pages/BasicPages/AppCounter';
+import AppProducts from 'pages/BasicPages/AppProducts';
+import AppRouter from 'pages/RouterPages/AppRouter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppProducts />
+    <AppRouter />
   </React.StrictMode>,
 );
 

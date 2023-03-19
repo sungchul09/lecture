@@ -1,4 +1,4 @@
-import './css/AppJSX.css';
+import 'pages/BasicPages/css/AppJSX.css';
 
 function AppJSX() {
   const name = 'seongcheol';

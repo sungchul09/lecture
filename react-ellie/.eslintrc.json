@@ -23,6 +23,8 @@
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": "off",
         "react/prop-types": "off",
-        "jsx-a11y/label-has-associated-control": "off"
+        "jsx-a11y/label-has-associated-control": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/no-unresolved": "off"
     }
 }
