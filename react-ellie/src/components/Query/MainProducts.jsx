@@ -1,4 +1,4 @@
-import Proudcts from 'components/Basic/Proudcts';
+import Proudcts from 'components/Query/Proudcts';
 import React, { useState } from 'react';
 
 export default function MainProducts() {

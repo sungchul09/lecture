@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import useProducts from 'hooks/use-products';
+import React, { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 export default function Proudcts() {
   const [checked, setChecked] = useState(false);
-  const [loading, error, products] = useProducts({ salesOnly: checked });
+  const { isLoading, error, data: products } = useQuery(['products', checked], async () => {
+    console.log('fetching...');
+    return fetch(`data/${checked ? 'sale_' : ''}products.json`).then((res) => {
+      console.log(res);
+      return res.json();
+    });
+  });
   const handleChange = () => setChecked((prev) => !prev);
-
-  if (loading) return <p>Loading...</p>;
+  if (isLoading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
   return (
     <>
@@ -16,7 +21,7 @@ export default function Proudcts() {
       </label>
       <ul>
         {products.map((product) => (
-          <li key={product.id}>
+          <li key={product.name}>
             <article>
               <h3>{product.name}</h3>
               <p>{product.price}</p>
