@@ -7,11 +7,12 @@ import AppProfile from 'pages/Basic/AppProfile';
 import AppCounter from 'pages/Basic/AppCounter';
 import AppProducts from 'pages/Basic/AppProducts';
 import AppRouter from 'pages/Router/AppRouter';
+import AppQuery from 'pages/Query/AppQuery';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppRouter />
+    <AppQuery />
   </React.StrictMode>,
 );
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 export default function Proudcts() {
-  const [count, setcount] = useState(0);
+  const [count, setCount] = useState(0);
   const [products, setProducts] = useState([]);
   const [checked, setChecked] = useState(false);
   const handleChange = () => setChecked((prev) => !prev);
@@ -32,7 +32,7 @@ export default function Proudcts() {
           ))
         }
       </ul>
-      <button type="button" onClick={() => setcount((prev) => prev + 1)}>{count}</button>
+      <button type="button" onClick={() => setCount((prev) => prev + 1)}>{count}</button>
     </>
   );
 }
