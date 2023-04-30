@@ -5,6 +5,13 @@ type Props = {
     slug: string;
   }
 }
+
+export function generateMetadata({params}: Props) {
+  return {
+    title: `제품 이름: ${params.slug}`
+  }
+}
+
 export default function SkirtsPage({params}: Props) { // props.params
   if(params.slug === 'nothing') {
     notFound()
