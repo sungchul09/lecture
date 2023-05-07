@@ -1,3 +1,4 @@
+import { getProducts, getProductt } from '@/service/products';
 import { notFound } from 'next/navigation';
 import React from 'react'
 type Props = {
@@ -12,17 +13,18 @@ export function generateMetadata({params}: Props) {
   }
 }
 
-export default function SkirtsPage({params}: Props) { // props.params
-  if(params.slug === 'nothing') {
+export default function SkirtsPage({params: {slug}}: Props) { // props.params
+  const product = getProductt(slug)
+  if(!product) {
     notFound()
   }
   return (
-    <h1>{params.slug} 페이지 입니다.</h1>
+    <h1>{product} 제품 설명 페이지</h1>
   )
 }
 
 export function generateStaticParams() {
-  const products = ['pants', 'skirts'];
+  const products = getProducts()
   return products.map(product => ({
     slug: product
   }))
