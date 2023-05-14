@@ -8,7 +8,7 @@ export default function AppQuery() {
   return (
     <QueryClientProvider client={queryClient}>
       <MainProducts />
-      <ReactQueryDevtools initialIsOpen />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
