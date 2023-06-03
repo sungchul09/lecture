@@ -13,9 +13,9 @@ const App = () => {
   }, [])
   return (
     <>
-      <p>
-        user정보: {user ? user.nickName : <b>현재 유저 정보가 존재하지 않습니다.</b>}
-      </p>
+      <b>
+        {user ? `${user.nickName}님 환영합니다!` : '로그인을 진행해주세요 🙆🏻‍♂️'}
+      </b>
       <div>
         <button onClick={onClick}>로그인</button>
       </div>
