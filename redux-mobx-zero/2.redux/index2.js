@@ -19,7 +19,15 @@ const firstMiddleware = (store) => (dispatch) => (action) => {
   console.log('액션 로깅', action)
   dispatch(action)
 }
-const enhancer = applyMiddleware(firstMiddleware)
+
+const thunkMiddleware = (store) => (dispatch) => (action) => {
+  if (typeof action === 'function') {
+    return action(store.dispatch, store.getState)
+  }
+  return dispatch(action)
+}
+
+const enhancer = applyMiddleware(firstMiddleware, thunkMiddleware)
 
 const store = createStore(reducer, initialState, enhancer)
 store.subscribe(() => {

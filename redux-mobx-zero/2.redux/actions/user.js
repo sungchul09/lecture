@@ -1,16 +1,48 @@
-  const logIn = (data) => {
-    return {
-      type: 'LOG_IN',
-      data,
+// sync action creator
+const logInRequest = (data) => {
+  return {
+    type: 'LOG_IN_REQUEST',
+    data: {
+      id: 'seongcheol',
+      password: '1234',
     }
   }
-  const logOut = (data) => {
-    return {
-      type: 'LOG_OUT',
-    }
+} 
+
+const logInSuccess = (data) => {
+  return {
+    type: 'LOG_IN_SUCCESS',
+    data,
   }
-  
-  module.exports = {
-    logIn,
-    logOut,
+}
+
+const logInFailure = (error) => {
+  return {
+    type: 'LOG_IN_FAILURE',
+    error,
   }
+}
+
+// async action creator
+const logIn = (data) => { 
+  return (dispatch, getState) => {
+    dispatch(logInRequest())
+    setTimeout(() => {
+      dispatch(logInSuccess({
+        userId: 1,
+        nickName: 'seongcheol'
+      }))
+    }, 2000)
+  }
+}
+
+const logOut = (data) => {
+  return {
+    type: 'LOG_OUT',
+  }
+}
+
+module.exports = {
+  logIn,
+  logOut,
+}
