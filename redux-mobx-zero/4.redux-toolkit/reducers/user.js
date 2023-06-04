@@ -1,29 +1,36 @@
-const { produce } = require('immer')
+const { createSlice } = require('@reduxjs/toolkit');
+const { logIn } = require('../actions/user');
 
 const initialState = {
   isLoggingIn: true,
   data: null,
 };
 
-const userReducer = (prevState = initialState, action) => {
-  return produce(prevState, (draft) => {
-    switch (action.type) {
-      case 'LOG_IN_REQUEST':
-        draft.data = null
-        draft.isLoggingIn = true
-        break;
-      case 'LOG_IN_SUCCESS':
-        draft.data = action.data
-        draft.isLoggingIn = false
-        break;
-      case 'LOG_OUT':
-          data: null
-        draft.isLoggingIn = false
-        break;
-      default:
-        break;
+const userSlice = createSlice({
+  name: 'user',
+  initialState,
+  // postReducer 내부 actions 또는 동기적인 actions
+  reducers: {
+    logOut(state, action) {
+      state.data = null
     }
-  })
-};
+  },
+  // postReducer 바깥 actions 또는 비동기적인 actions
+  extraReducers: {
+    [logIn.pending](state, action){
+      state.isLoggingIn = true
+    },
+    [logIn.fulfilled](state, action) {
+      state.data = action.payload
+      state.isLoggingIn = false
+    },
+    [logIn.rejected](state, action) {
+      state.data = null
+      state.isLoggingIn = false
+    }
+  }
+})
 
-module.exports = userReducer;
+module.exports = { 
+  userSlice
+}

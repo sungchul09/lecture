@@ -1,48 +1,19 @@
-// sync action creator
-const logInRequest = (data) => {
-  return {
-    type: 'LOG_IN_REQUEST',
-    data: {
-      id: 'seongcheol',
-      password: '1234',
-    }
-  }
-} 
+const { createAsyncThunk } = require('@reduxjs/toolkit')
 
-const logInSuccess = (data) => {
-  return {
-    type: 'LOG_IN_SUCCESS',
-    data,
-  }
-}
+const delay = (time, value) => new Promise((resolve, reject) => [
+  setTimeout(() => {
+    resolve(value)
+  }, time)
+])
 
-const logInFailure = (error) => {
-  return {
-    type: 'LOG_IN_FAILURE',
-    error,
-  }
-}
-
-// async action creator
-const logIn = (data) => { 
-  return (dispatch, getState) => {
-    dispatch(logInRequest())
-    setTimeout(() => {
-      dispatch(logInSuccess({
-        userId: 'seongcheol',
-        nickName: '성철'
-      }))
-    }, 2000)
-  }
-}
-
-const logOut = (data) => {
-  return {
-    type: 'LOG_OUT',
-  }
-}
+const logIn = createAsyncThunk('user/logIn', async (data, thunkAPI) => {
+  const result = await delay(500, {
+    userId: 1,
+    nickName: 'seongcheol'
+  })
+  return result
+})
 
 module.exports = {
   logIn,
-  logOut,
 }
