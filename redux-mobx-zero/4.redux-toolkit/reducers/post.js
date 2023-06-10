@@ -16,7 +16,7 @@ const postSlice = createSlice({
   .addCase(addPost.pending, (state, action) => {
 
   })
-  .addCase(addPost.fullfilled, (state, action) => {
+  .addCase(addPost.fulfilled, (state, action) => {
 
   })
   .addCase(addPost.rejected, (state, action) => {
@@ -27,7 +27,7 @@ const postSlice = createSlice({
   }, (state, action) => {
     state.isLoading = true
   })
-  .addDefaulCase((state, action) => {
+  .addDefaultCase((state, action) => {
 
   })
 })
