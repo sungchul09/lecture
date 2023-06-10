@@ -12,17 +12,24 @@ const postSlice = createSlice({
     }
   },
   // postReducer 바깥 actions 또는 비동기적인 actions
-  extraReducers: {
-    [addPost.pending](state, action) {
+  extraReducers: (builder) => builder
+  .addCase(addPost.pending, (state, action) => {
 
-    },
-    [addPost.fullfilled](state, action) {
-      
-    },
-    [addPost.rejected](state, action) {
-      
-    }
-  }
+  })
+  .addCase(addPost.fullfilled, (state, action) => {
+
+  })
+  .addCase(addPost.rejected, (state, action) => {
+
+  })
+  .addMatcher((action) => {
+    return action.type.includes('/pending')
+  }, (state, action) => {
+    state.isLoading = true
+  })
+  .addDefaulCase((state, action) => {
+
+  })
 })
 
 module.exports = {
