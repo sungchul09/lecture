@@ -1,7 +1,16 @@
 import React from 'react'
+import Profile from '../../components/Profile'
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
+import PostList from '../../components/PostList'
 
-export default function Profile() {
+export default function ProfilePage() {
   return (
-    <div>Profile</div>
+    <>
+      <Header />
+      <Profile />
+      <PostList hasNavigation={false} />
+      <Footer />
+    </>
   )
 }
