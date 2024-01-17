@@ -24,7 +24,7 @@ function CardPage() {
   const { name, corpName, promotion, tags, benefit } = data
 
   const subTitle =
-    promotion != null ? removeHtmlTags(promotion.title) : tags.join(', ')
+    promotion != null ? removeHtmlTags(promotion.title) : tags?.join(', ')
 
   return (
     <div>
