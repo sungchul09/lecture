@@ -29,9 +29,6 @@ function CardList() {
     },
   )
 
-  console.log('@@data', data)
-  console.log('@@hasNextPage', hasNextPage)
-
   const navigate = useNavigate()
 
   const loadMore = useCallback(() => {

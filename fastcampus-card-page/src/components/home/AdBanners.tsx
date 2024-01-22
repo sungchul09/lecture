@@ -14,8 +14,6 @@ import 'swiper/css'
 function AdBanners() {
   const { data } = useQuery(['adBanners'], () => getAdBanners())
 
-  console.log('data', data)
-
   if (data == null) {
     return null
   }
