@@ -10,7 +10,7 @@ import {
 } from 'firebase/firestore'
 import { store } from './firebase'
 
-import { COLLECTIONS } from '@constants'
+import { COLLECTIONS } from '@constants/index'
 import { Card } from '@/models/card'
 
 // pageParam 지금 보이고 있는 맨 마지막요소

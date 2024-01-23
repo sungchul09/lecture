@@ -2,7 +2,7 @@ import Button from '../shared/Button'
 import { collection, doc, writeBatch } from 'firebase/firestore'
 import { store } from '@remote/firebase'
 import { adBanners } from '@mock/data'
-import { COLLECTIONS } from '@constants'
+import { COLLECTIONS } from '@constants/index'
 
 function AdBannerListAddButton() {
   const handleButtonClick = async () => {
