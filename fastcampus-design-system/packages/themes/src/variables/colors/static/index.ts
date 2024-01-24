@@ -1,1 +1,1 @@
-export * as llight from './light'
+export * as light from './light'
