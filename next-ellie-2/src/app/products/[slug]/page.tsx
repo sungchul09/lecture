@@ -8,6 +8,13 @@ type Props = {
     slug: string;
   }
 }
+
+export function generateMetadata({params}: Props) {
+    return {
+      title: `제품의 이름: ${params.slug}`
+    }
+}
+
 export default function SkirtsPage({params}: Props) { // props.params
   const products = ['shirts', 'pants', 'skirts', 'shoes']
   if(params.slug === 'nothing') {
