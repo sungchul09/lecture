@@ -1,7 +1,6 @@
 // app/products/[slug]/page.tsx
-
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { getProduct, getProducts } from '@/app/service/products';
+import { notFound, redirect } from 'next/navigation';
 import React from 'react'
 type Props = {
   params: {
@@ -15,26 +14,22 @@ export function generateMetadata({params}: Props) {
     }
 }
 
-export default function SkirtsPage({params}: Props) { // props.params
-  const products = ['shirts', 'pants', 'skirts', 'shoes']
-  if(params.slug === 'nothing') {
+export default async function ProductPage({ params: { slug }}: Props) { // props.params
+  const product = await getProduct(slug)
+  if(!product) {
+    redirect('/products')
     notFound()
   }
+  // 서버 파일에 있는 데이터중 해당 제품의 정보를 찾아서 그걸 보여줌
   return (
-    <>
-      <h1>{params.slug} 페이지 입니다.</h1>
-      <ul>
-        { products.map((product, index) => <li key={index}>
-          <Link href={`/products/${product}`}>{product}</Link>
-        </li>)}
-      </ul>
-    </>
+    <h1>{product.name} 제품 설명 페이지</h1>
   )
 }
 
-export function generateStaticParams() {
-  const products = ['pants', 'skirt'];
+export async function generateStaticPrams() {
+  // 모든 제품의 페이지들을 미리 만들어 둘 수 있게 해줄거임 (SSG)
+  const products = await getProducts()
   return products.map(product => ({
-    slug: product
+    slug: product.id
   }))
 }
