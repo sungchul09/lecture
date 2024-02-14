@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
+import Header from "@/components/Header";
 import Avatar from "@/components/Avatar";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const sans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "blog app",
@@ -17,10 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={sans.className}>
+      <body className="flex flex-col">
         <Header />
-        {children}
+        <main className="grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

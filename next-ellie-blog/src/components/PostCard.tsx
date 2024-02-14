@@ -1,21 +1,31 @@
 "use client";
-import { Post } from "@/app/page";
+import { Post } from "@/service/post";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface Props {
   posts: Post;
 }
 
-export default function FeaturedPosts({ posts }: Props) {
+export default function PostCard({ posts }: Props) {
   const { path, title, date, description, category } = posts;
+  const router = useRouter();
+
+  const navigateToDetail = () => {
+    router.push(`/posts/${path}`);
+  };
+
   return (
     <>
-      <div className="w-fit flex flex-col shadow rounded-lg">
+      <article
+        className="w-fit flex flex-col shadow rounded-lg cursor-pointer"
+        onClick={navigateToDetail}
+      >
         <Image
           className="rounded-t-lg"
           src={`/images/posts/${path}.png`}
           width={400}
-          height={400}
+          height={400}f
           alt={title}
         />
         <div className="p-2">
@@ -23,10 +33,12 @@ export default function FeaturedPosts({ posts }: Props) {
           <div className="flex flex-col items-center gap-2">
             <h4 className="font-bold">{title}</h4>
             <p>{description}</p>
-            <p className="bg-lime-300 rounded-2xl pl-1 pr-1">{category}</p>
+            <span className="bg-lime-300 rounded-2xl pl-1 pr-1">
+              {category}
+            </span>
           </div>
         </div>
-      </div>
+      </article>
     </>
   );
 }
