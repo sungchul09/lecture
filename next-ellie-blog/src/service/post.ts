@@ -16,6 +16,10 @@ export const getFeaturedPosts = async (): Promise<Post[]> => {
   return getAllPosts().then((posts) => posts.filter((post) => post.featured));
 };
 
+export const getNonFeaturedPost = async (): Promise<Post[]> => {
+  return getAllPosts().then((posts) => posts.filter((post) => !post.featured));
+};
+
 export const getAllPosts = async (): Promise<Post[]> => {
   const filePath = path.join(process.cwd(), "src/data", "posts.json");
   return fs

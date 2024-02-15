@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 interface Props {
-  posts: Post;
+  post: Post;
 }
 
-export default function PostCard({ posts }: Props) {
-  const { path, title, date, description, category } = posts;
+export default function PostCard({ post }: Props) {
+  const { path, title, date, description, category } = post;
   const router = useRouter();
 
   const navigateToDetail = () => {
@@ -25,7 +25,7 @@ export default function PostCard({ posts }: Props) {
           className="rounded-t-lg"
           src={`/images/posts/${path}.png`}
           width={400}
-          height={400}f
+          height={400}
           alt={title}
         />
         <div className="p-2">
