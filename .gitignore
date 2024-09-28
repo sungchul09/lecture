@@ -1,0 +1,4 @@
+**/dist/*
+**/.yarn/*
+**/.next/*
+**/node_modules/*
